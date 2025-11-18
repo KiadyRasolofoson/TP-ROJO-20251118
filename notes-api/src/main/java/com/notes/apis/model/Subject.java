@@ -1,13 +1,6 @@
 package com.notes.apis.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "subject")
@@ -17,21 +10,41 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSubject;
 
+    @Column(nullable = false)
     private String title;
 
-    @Column(unique = true)
+    @Column(nullable = false)
     private String ue;
 
+    @Column(nullable = false)
     private int credit;
+
+    @Column(nullable = false)
     private int code;
 
     @ManyToOne
     @JoinColumn(name = "id_semester", nullable = false)
     private Semester semester;
 
+    @ManyToOne
+    @JoinColumn(name = "id_program_option", nullable = false)
+    private ProgramOption programOption;
+
+    // Default constructor
     public Subject() {
     }
 
+    // Constructor with fields
+    public Subject(String title, String ue, int credit, int code, Semester semester, ProgramOption programOption) {
+        this.title = title;
+        this.ue = ue;
+        this.credit = credit;
+        this.code = code;
+        this.semester = semester;
+        this.programOption = programOption;
+    }
+
+    // Getters and setters
     public Long getIdSubject() {
         return idSubject;
     }
@@ -80,5 +93,11 @@ public class Subject {
         this.semester = semester;
     }
 
-    // getters & setters
+    public ProgramOption getProgramOption() {
+        return programOption;
+    }
+
+    public void setProgramOption(ProgramOption programOption) {
+        this.programOption = programOption;
+    }
 }

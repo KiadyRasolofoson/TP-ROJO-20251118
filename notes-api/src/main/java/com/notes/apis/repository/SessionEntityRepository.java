@@ -7,4 +7,5 @@ import com.notes.apis.model.SessionEntity;
 
 @Repository
 public interface SessionEntityRepository extends JpaRepository<SessionEntity, Long> {
+
 }

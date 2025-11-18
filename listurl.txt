@@ -1,0 +1,2 @@
+http://localhost:8081/api/students/1/grades/level/1
+http://localhost:8081/api/students/1/grades/semester/1

@@ -17,7 +17,6 @@ public class TestController {
         json.put("message", "API is working!");
         json.put("status", "success");
         json.put("timestamp", System.currentTimeMillis());
-
         return json;
     }
 }

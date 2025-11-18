@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0 # <-- IMPORTANT: Remplacez par le nom et tag de votre image chargée
+    image: mysql:8.0 
     container_name: mysql_db
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -13,7 +13,7 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./init-db:/docker-entrypoint-initdb.d # <-- Ligne ajoutée
+      - ./init-db:/docker-entrypoint-initdb.d 
 
   app:
     build: .

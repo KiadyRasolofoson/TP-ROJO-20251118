@@ -18,5 +18,20 @@ public class Level {
     @Column(unique = true)
     private String label;
 
-    // getters & setters
+    public Long getIdLevel() {
+        return idLevel;
+    }
+
+    public void setIdLevel(Long idLevel) {
+        this.idLevel = idLevel;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
 }

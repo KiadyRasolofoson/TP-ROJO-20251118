@@ -19,15 +19,6 @@ public class Student {
     private String firstname;
     private LocalDate birth;
 
-    public Student() {
-    }
-
-    public Student(String name, String firstname, LocalDate birth) {
-        this.name = name;
-        this.firstname = firstname;
-        this.birth = birth;
-    }
-
     public Long getIdStudent() {
         return idStudent;
     }

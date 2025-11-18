@@ -36,5 +36,53 @@ public class Progress {
     @JoinColumn(name = "id_student", nullable = false)
     private Student student;
 
+    public Long getIdProgress() {
+        return idProgress;
+    }
+
+    public void setIdProgress(Long idProgress) {
+        this.idProgress = idProgress;
+    }
+
+    public ProgramOption getOption() {
+        return option;
+    }
+
+    public void setOption(ProgramOption option) {
+        this.option = option;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
+    public Semester getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semester semester) {
+        this.semester = semester;
+    }
+
+    public SessionEntity getSession() {
+        return session;
+    }
+
+    public void setSession(SessionEntity session) {
+        this.session = session;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     // getters & setters
 }

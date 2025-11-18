@@ -18,9 +18,6 @@ public class ProgramOption {
     @Column(nullable = false, unique = true)
     private String label;
 
-    public ProgramOption() {
-    }
-
     public Long getIdOption() {
         return idOption;
     }
@@ -36,6 +33,4 @@ public class ProgramOption {
     public void setLabel(String label) {
         this.label = label;
     }
-
-    // getters & setters
 }

@@ -30,21 +30,6 @@ public class Subject {
     @JoinColumn(name = "id_program_option", nullable = false)
     private ProgramOption programOption;
 
-    // Default constructor
-    public Subject() {
-    }
-
-    // Constructor with fields
-    public Subject(String title, String ue, int credit, int code, Semester semester, ProgramOption programOption) {
-        this.title = title;
-        this.ue = ue;
-        this.credit = credit;
-        this.code = code;
-        this.semester = semester;
-        this.programOption = programOption;
-    }
-
-    // Getters and setters
     public Long getIdSubject() {
         return idSubject;
     }
@@ -100,4 +85,6 @@ public class Subject {
     public void setProgramOption(ProgramOption programOption) {
         this.programOption = programOption;
     }
+
+    // Getters & setters
 }

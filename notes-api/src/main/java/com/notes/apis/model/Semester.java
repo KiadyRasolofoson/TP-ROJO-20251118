@@ -18,15 +18,6 @@ public class Semester {
     @Column(nullable = false, unique = true)
     private String label;
 
-    public Semester() {
-
-    }
-
-    public Semester(Long idSemester, String label) {
-        this.idSemester = idSemester;
-        this.label = label;
-    }
-
     public Long getIdSemester() {
         return idSemester;
     }
@@ -42,5 +33,4 @@ public class Semester {
     public void setLabel(String label) {
         this.label = label;
     }
-
 }

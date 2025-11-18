@@ -1,6 +1,8 @@
-# TODO 
+# TODO
 
 # partie 1 : configuration du docker
-    [ ] creation des 
+    [ ] creation de l'environnement
     [ ] creation des fichiers docker-compose.yml et Dockerfile
-    [ ] creation des fichiers init-db.sql et schema.sql
+    [ ] tester le contenaire
+
+# partie 2 : 

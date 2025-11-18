@@ -5,4 +5,6 @@
     [ ] creation des fichiers docker-compose.yml et Dockerfile
     [ ] tester le contenaire
 
-# partie 2 : 
+# partie 2 : configuration de l'environnement
+    [ ] ajouter les dependances necessaire
+

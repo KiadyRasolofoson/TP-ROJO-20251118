@@ -16,7 +16,7 @@ public class TokenController {
 
     private final TokenService tokenService;
 
-    @Value("${app.admin.key:changeme}")
+    @Value("${app.admin.key:sylviokiady}")
     private String adminKey;
 
     public TokenController(TokenService tokenService) {

@@ -1,7 +1,7 @@
 <template>
     <div class="etudiants-semestre">
         <div class="header">
-            <router-link to="/semestre" class="back-btn">← Retour aux semestres</router-link>
+            <router-link to="/" class="back-btn">← Retour aux semestres</router-link>
             <h1>Étudiants du Semestre {{ semestreId }}</h1>
         </div>
 

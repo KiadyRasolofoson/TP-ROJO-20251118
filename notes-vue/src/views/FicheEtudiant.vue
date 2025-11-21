@@ -120,6 +120,48 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Section des niveaux L1 et L2 -->
+            <div class="levels-section">
+                <div class="section-header">
+                    <h2>Notes par Niveau</h2>
+                    <div class="summary">
+                        <span class="summary-item">Niveaux disponibles</span>
+                    </div>
+                </div>
+
+                <div class="levels-grid">
+                    <div class="level-card">
+                        <div class="level-header">
+                            <h3>Licence 1 (L1)</h3>
+                            <span class="level-badge">S1 + S2</span>
+                        </div>
+                        <div class="level-description">
+                            <p>Première année de licence - Semestres 1 et 2</p>
+                        </div>
+                        <div class="level-actions">
+                            <router-link :to="`/etudiant/${data.student.id}/niveau/1`" class="level-btn">
+                                Voir notes L1
+                            </router-link>
+                        </div>
+                    </div>
+
+                    <div class="level-card">
+                        <div class="level-header">
+                            <h3>Licence 2 (L2)</h3>
+                            <span class="level-badge">S3 + S4</span>
+                        </div>
+                        <div class="level-description">
+                            <p>Deuxième année de licence - Semestres 3 et 4</p>
+                        </div>
+                        <div class="level-actions">
+                            <router-link :to="`/etudiant/${data.student.id}/niveau/2`" class="level-btn">
+                                Voir notes L2
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -557,6 +599,108 @@ h1 {
 
     .chart-bar-wrapper {
         width: 40px;
+    }
+}
+
+.levels-section {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.levels-section h2 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #42b983;
+    padding-bottom: 10px;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.level-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.level-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.level-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.3em;
+}
+
+.level-badge {
+    background: #42b983;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.level-description {
+    margin-bottom: 20px;
+}
+
+.level-description p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.level-actions {
+    text-align: center;
+}
+
+.level-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.level-btn:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .level-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .level-badge {
+        align-self: flex-start;
     }
 }
 </style>

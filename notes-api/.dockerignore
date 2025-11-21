@@ -1,0 +1,13 @@
+# Exclure le répertoire de build de Maven
+target/
+
+# Exclure les fichiers de l'IDE et les logs
+.idea/
+.vscode/
+*.iml
+*.log
+logs/
+
+# Exclure le versionnement Git
+.git/
+.gitignore

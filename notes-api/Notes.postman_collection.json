@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "a9f7b14b-5b80-4721-8624-233533ce2bde",
+		"name": "Notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46337848",
+		"_collection_link": "https://kiady-1105667.postman.co/workspace/Kiady's-Workspace~fa7b9f9d-bef8-462f-83cd-1ce35d0c9feb/collection/46337848-a9f7b14b-5b80-4721-8624-233533ce2bde?action=share&source=collection_link&creator=46337848"
+	},
+	"item": [
+		{
+			"name": "level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/api/students/1/grades/level/1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"students",
+						"1",
+						"grades",
+						"level",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "semester",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/api/students/1/grades/semester/1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"students",
+						"1",
+						"grades",
+						"semester",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

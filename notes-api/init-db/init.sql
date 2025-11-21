@@ -1,3 +1,25 @@
+CREATE TABLE IF NOT EXISTS users (
+    id_user INT AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL, -- ⚠️ Plus long pour le hachage
+    date_created DATE DEFAULT CURRENT_DATE,
+    PRIMARY KEY(id_user),
+    UNIQUE(username) -- Empêche les doublons
+);
+
+CREATE TABLE IF NOT EXISTS tokens (
+    id INT AUTO_INCREMENT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME NOT NULL,
+    owner INT NOT NULL,
+    value VARCHAR(100) NOT NULL, -- ⚠️ Plus long pour token JWT
+    PRIMARY KEY(id),
+    FOREIGN KEY(owner) REFERENCES users(id_user) ON DELETE CASCADE,
+    INDEX(owner), -- Améliore les performances
+    INDEX(value) -- Pour les recherches par token
+);
+
+
 -- =====================================
 -- 1️⃣ Insert Semesters
 -- =====================================

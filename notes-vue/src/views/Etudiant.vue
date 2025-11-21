@@ -1,7 +1,7 @@
 <template>
     <div class="etudiants-semestre">
         <div class="header">
-            <router-link to="/semestre" class="back-btn">← Retour aux semestres</router-link>
+            <router-link to="/" class="back-btn">← Retour aux semestres</router-link>
             <h1>Étudiants du Semestre {{ semestreId }}</h1>
         </div>
 
@@ -33,7 +33,7 @@
 
                             <p><strong>ID:</strong> {{ etudiant.idStudent }}</p>
                             <p v-if="etudiant.birth"><strong>Date de naissance:</strong> {{ formatDate(etudiant.birth)
-                                }}</p>
+                            }}</p>
 
                             <!-- Affichage des moyennes par semestre -->
                             <div class="averages-section">

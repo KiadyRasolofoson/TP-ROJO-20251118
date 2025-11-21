@@ -55,6 +55,14 @@ class ApiService {
     async getNotesEtudiantSemestre(studentId, semesterId) {
         return this.request(`/students/${studentId}/grades/semester/${semesterId}`)
     }
+
+    async getAveragesEtudiant(studentId) {
+        return this.request(`/students/${studentId}/averages`)
+    }
+
+    async getNotesNiveau(studentId, niveauId) {
+        return this.request(`/students/${studentId}/grades/level/${niveauId}`)
+    }
 }
 
 export default new ApiService()

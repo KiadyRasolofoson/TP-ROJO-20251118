@@ -19,6 +19,18 @@ CREATE TABLE IF NOT EXISTS tokens (
     INDEX(value) -- Pour les recherches par token
 );
 
+-- =====================================
+-- 9️⃣ Insert Users
+-- =====================================
+INSERT INTO users(username, password, date_created) VALUES
+    ('admin', 'password', '2025-01-01');
+
+-- =====================================
+-- 1️⃣0️⃣ Insert Tokens
+-- =====================================
+INSERT INTO tokens(created_at, expires_at, owner, value) VALUES
+    ('2025-01-01 00:00:00', '2025-01-31 00:00:00', 1, 'admin-token');
+
 
 -- =====================================
 -- 1️⃣ Insert Semesters

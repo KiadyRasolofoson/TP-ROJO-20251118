@@ -8,11 +8,15 @@ class ApiService {
     async request(endpoint, options = {}) {
         const url = `${this.baseURL}${endpoint}`
 
+        const token = typeof localStorage !== 'undefined' ? localStorage.getItem('token') : null
+        const headers = {
+            ...config.DEFAULT_HEADERS,
+            ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+            ...options.headers
+        }
+
         const defaultOptions = {
-            headers: {
-                ...config.DEFAULT_HEADERS,
-                ...options.headers
-            },
+            headers,
             timeout: config.TIMEOUT
         }
 
@@ -33,6 +37,14 @@ class ApiService {
     // Méthode pour récupérer les semestres
     async getSemestres() {
         return this.request('/semesters')
+    }
+
+    // Méthode pour l'authentification (login)
+    async login(username, password, daysValid = 30) {
+        return this.request('/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({ username, password, daysValid })
+        })
     }
 
     // Méthode pour récupérer les étudiants d'un semestre

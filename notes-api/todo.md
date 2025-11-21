@@ -1,4 +1,4 @@
-# TODO - Projet Web Services (TP Compléments)
+# TODO - Projet Web Services
 
 ## TP1a - WS des notes
 - [ ] Créer WS pour renvoyer les notes d’un semestre (S1, S2, S3, S4)

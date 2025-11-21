@@ -26,5 +26,14 @@ services:
     ports:
       - "8080:8080"
 
+  db-seed:
+    image: mysql:8.0
+    container_name: mysql_db_seed
+    depends_on:
+      - db
+    volumes:
+      - ./init-db:/init-db:ro
+    entrypoint: ["sh","-c","\n      echo 'Waiting for DB to be ready...';\n      until mysql -h db -P 3306 -uuser -ppassword -e \"SELECT 1\" >/dev/null 2>&1; do\n        sleep 1;\n      done;\n      echo 'DB ready — importing init-db/init.sql';\n      mysql -h db -P 3306 -uuser -ppassword notesdb < /init-db/init.sql;\n      echo 'Seed complete';\n      exit 0\n    "]
+
 volumes:
   mysql_data:

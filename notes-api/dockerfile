@@ -1,24 +1,28 @@
+# syntax = docker/dockerfile:1.4
+
 # --- Stage 1: Build ---
 # Utiliser une image JDK complète pour la construction
 FROM eclipse-temurin:17-jdk-jammy as build
 
 WORKDIR /app
 
-# Copier les fichiers du Maven Wrapper
+# Copier les fichiers du Maven Wrapper et le pom uniquement d'abord
+# pour profiter du cache Docker lorsque seul le code source change.
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
 
 # Donner les permissions d'exécution au wrapper
 RUN chmod +x mvnw
 
-# Télécharger les dépendances (cette couche sera mise en cache)
-RUN ./mvnw dependency:go-offline
+# Utiliser un cache de build pour le repo Maven (nécessite BuildKit)
+# Cette étape télécharge les dépendances et les met en cache dans la couche.
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -B -DskipTests dependency:go-offline
 
-# Copier le code source
+# Copier le code source (changements du code n'invalideront pas le cache des dépendances)
 COPY src/ ./src/
 
-# Construire l'application et créer le JAR
-RUN ./mvnw package -DskipTests
+# Construire l'application en réutilisant le cache Maven
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -B -DskipTests package
 
 # --- Stage 2: Run ---
 # Utiliser une image JRE plus légère pour l'exécution

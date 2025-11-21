@@ -8,6 +8,11 @@ target/
 *.log
 logs/
 
+# Exclure fichiers système et dépendances locales
+.DS_Store
+node_modules/
+tmp/
+
 # Exclure le versionnement Git
 .git/
 .gitignore

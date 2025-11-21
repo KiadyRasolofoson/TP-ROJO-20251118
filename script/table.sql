@@ -69,3 +69,20 @@ CREATE TABLE grade (
     FOREIGN KEY(id_subject) REFERENCES subject(id_subject),
     FOREIGN KEY(id_progress) REFERENCES progress(id_progress)
 );
+
+CREATE TABLE IF NOT EXISTS users (
+    id_user INT AUTO_INCREMENT,
+    username VARCHAR(50),
+    password VARCHAR(20),
+    date_created DATE,
+    PRIMARY KEY(id_user)
+);
+
+CREATE TABLE IF NOT EXISTS tokens (
+    id INT AUTO_INCREMENT,
+    created_at DATETIME,
+    expires_at DATETIME,
+    owner INT,
+    value VARCHAR(50),
+    PRIMARY KEY(id)
+);

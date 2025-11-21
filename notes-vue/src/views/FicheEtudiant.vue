@@ -1,7 +1,7 @@
 <template>
     <div class="fiche-etudiant">
         <div class="header">
-            <router-link to="/semestre" class="back-btn">← Retour aux semestres</router-link>
+            <router-link to="/" class="back-btn">← Retour aux semestres</router-link>
             <h1>Fiche Étudiant</h1>
         </div>
 

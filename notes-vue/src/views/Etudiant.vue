@@ -33,7 +33,7 @@
 
                             <p><strong>ID:</strong> {{ etudiant.idStudent }}</p>
                             <p v-if="etudiant.birth"><strong>Date de naissance:</strong> {{ formatDate(etudiant.birth)
-                                }}</p>
+                            }}</p>
 
                             <!-- Affichage des moyennes par semestre -->
                             <div class="averages-section">

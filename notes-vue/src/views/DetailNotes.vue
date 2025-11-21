@@ -164,89 +164,12 @@ export default {
             } catch (err) {
                 console.error('Error fetching grades:', err)
                 this.error = 'Impossible de charger les détails des notes'
-                // Données mockées pour le test
-                this.data = this.getMockData()
             } finally {
                 this.loading = false
             }
         },
 
-        getMockData() {
-            return {
-                student: {
-                    id: 1,
-                    firstname: "John",
-                    name: "Doe"
-                },
-                semester: {
-                    label: "Semester 2",
-                    id: 2
-                },
-                grades: [
-                    {
-                        subject: {
-                            ue: "INF106",
-                            idSubject: 10,
-                            title: "Advanced Programming",
-                            credit: 6
-                        },
-                        grade: 16.0,
-                        idGrade: 10
-                    },
-                    {
-                        subject: {
-                            ue: "INF105",
-                            idSubject: 9,
-                            title: "Hardware and Software Maintenance",
-                            credit: 4
-                        },
-                        grade: 13.0,
-                        idGrade: 9
-                    },
-                    {
-                        subject: {
-                            ue: "MTH105",
-                            idSubject: 12,
-                            title: "Probability and Statistics",
-                            credit: 4
-                        },
-                        grade: 13.5,
-                        idGrade: 12
-                    },
-                    {
-                        subject: {
-                            ue: "INF102",
-                            idSubject: 7,
-                            title: "Relational Databases",
-                            credit: 5
-                        },
-                        grade: 15.0,
-                        idGrade: 7
-                    },
-                    {
-                        subject: {
-                            ue: "INF103",
-                            idSubject: 8,
-                            title: "System Administration Basics",
-                            credit: 5
-                        },
-                        grade: 14.5,
-                        idGrade: 8
-                    },
-                    {
-                        subject: {
-                            ue: "MTH103",
-                            idSubject: 11,
-                            title: "Vector and Matrix Calculus",
-                            credit: 6
-                        },
-                        grade: 14.0,
-                        idGrade: 11
-                    }
-                ]
-            }
-        },
-
+        
         getGradeClass(grade) {
             if (grade >= 16) return 'excellent';
             if (grade >= 14) return 'very-good';

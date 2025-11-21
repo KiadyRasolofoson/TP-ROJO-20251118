@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Semestre from '../views/Semestre.vue'
 import Etudiant from '../views/Etudiant.vue'
 import DetailNotes from '../views/DetailNotes.vue'
+import FicheEtudiant from '../views/FicheEtudiant.vue'
 
 const routes = [
 
@@ -21,6 +22,12 @@ const routes = [
         path: '/etudiant/:id/notes/:semestreId',
         name: 'DetailNotes',
         component: DetailNotes,
+        props: true
+    },
+    {
+        path: '/etudiant/:id/fiche',
+        name: 'Fiche',
+        component: FicheEtudiant,
         props: true
     }
 
